@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
-    public float speed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.D))
         {
-            player.transform.position += Vector3.right;
+            player.transform.position += Vector3.right * 0.4f;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            player.transform.position += Vector3.left;
+            player.transform.position += Vector3.left * 0.4f;
         }
     }
 }
