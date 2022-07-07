@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
 
+    public Bullet projectile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             player.transform.position += Vector3.left * 0.4f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Bullet clone = Instantiate(projectile, transform.position, transform.rotation);
+
+            clone.timeoutDestructor = 5;
         }
     }
 }
