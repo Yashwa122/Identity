@@ -19,10 +19,13 @@ public class Bullet : MonoBehaviour
     {
         bullet.AddForce(transform.up * bulletSpeed);
     }
-    /*
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
     }
-    */
+
 }
